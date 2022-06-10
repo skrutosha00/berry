@@ -1,0 +1,97 @@
+body {
+  font-weight: 800;
+}
+
+.shop {
+  position: absolute;
+  left: 3%;
+  top: 3%;
+
+  width: 25%;
+  height: 12%;
+  max-height: 100px;
+
+  font-size: 3vw;
+
+  background-color: #232323;
+  border: solid 8px #eeda00;
+}
+
+.level_cont {
+  position: absolute;
+  top: 50%;
+  right: 3%;
+  transform: translate(0, -50%);
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+
+  width: 42%;
+  height: 80%;
+  max-height: 500px;
+}
+
+.level {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  height: 20%;
+  max-height: 115px;
+
+  font-size: 3vw;
+
+  background-color: #232323;
+  border: solid 10px #eeda00;
+}
+
+.avatar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 120px;
+  height: 120px;
+}
+
+.enemy1 {
+  position: absolute;
+  left: 28%;
+  top: 23%;
+  z-index: -1;
+
+  transform: rotate(-45deg);
+}
+
+.enemy2 {
+  position: absolute;
+  left: 10%;
+  top: 30%;
+  z-index: -1;
+
+  max-width: 15%;
+}
+
+@media screen and (min-height: 400px) {
+  .avatar {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+@media screen and (min-height: 768px) {
+  .avatar {
+    width: 250px;
+    height: 250px;
+  }
+
+  .avatar img {
+    height: 300px;
+  }
+
+  .enemy1 {
+    height: 250px;
+    top: 30%;
+  }
+}

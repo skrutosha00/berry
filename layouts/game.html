@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="initial-scale=1.0, width=device-width, viewport-fit=cover"
+    />
+    <link rel="shortcut icon" href="../png/icon.png" />
+    <link rel="stylesheet" href="../styles/common_style.css" />
+    <link rel="stylesheet" href="../styles/game.css" />
+    <title>Money Toy</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="warning">
+        <div class="top">
+          <div class="left block">
+            <div class="avatar block">
+              <div class="avatar_name"></div>
+            </div>
+          </div>
+          <div class="right">
+            <div class="text">Game Over</div>
+            <div class="info money">
+              <img src="../png/currency.png" alt="money" />
+              <div class="amount_money"></div>
+            </div>
+            <div class="info info_enemy">
+              <img src="../png/enemy_2.png" alt="enemy" />
+              <div class="amount_enemy"></div>
+            </div>
+          </div>
+        </div>
+        <div class="bottom">
+          <div class="again block">Replay</div>
+          <a href="./main.html" class="block">Menu</a>
+        </div>
+      </div>
+
+      <div class="score_cont">
+        <img src="../png/enemy_2.png" alt="enemy">
+        <div class="score">0</div>
+      </div>
+
+      <div class="earned_cont">
+        <img src="../png/currency.png" alt="money">
+        <div class="earned">0</div>
+      </div>
+
+      <a href="./main.html" class="home">
+        <img src="../png/home.png" alt="home" />
+      </a>
+
+      <div class="avatar block">
+        <div class="avatar_name"></div>
+      </div>
+      <div class="balance_field"></div>
+
+      <div class="control">
+        <div>time</div>
+        <div class="time">60</div>
+        <div class="level"></div>
+      </div>
+
+      <div class="chosen block"></div>
+      <div class="cf block"></div>
+    </div>
+    <script src="../scripts/game.js" type="module"></script>
+  </body>
+</html>

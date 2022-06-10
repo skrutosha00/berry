@@ -1,0 +1,114 @@
+.main {
+  position: absolute;
+  left: 5%;
+  top: 5%;
+
+  width: 90%;
+  height: 70%;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+
+  background-color: #232323;
+  border: solid 10px #eeda00;
+}
+
+.header {
+  font-size: 3vw;
+}
+
+.avatar_cont {
+  display: flex;
+  justify-content: space-between;
+
+  width: 90%;
+}
+
+.chosen {
+  filter: brightness(150%);
+}
+
+.name_cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 50%;
+}
+
+.name_cont div {
+  font-weight: 800;
+  font-size: 2.5vw;
+}
+
+input {
+  height: 30px;
+  width: 80%;
+  padding: 0;
+
+  outline: none;
+  border: none;
+
+  text-align: center;
+  font-size: 2.5vw;
+  font-style: italic;
+
+  background-color: #eeda00;
+}
+
+.button {
+  position: absolute;
+  bottom: 3%;
+  left: 50%;
+  z-index: 3;
+
+  width: 40%;
+  height: 10%;
+  transform: translate(-50%, 0);
+
+  font-size: 3vw;
+  font-weight: 800;
+
+  background-color: #232323;
+  border: solid 8px #eeda00;
+}
+
+@media screen and (max-width: 780px) {
+  .avatar {
+    width: 75px;
+    height: 75px;
+  }
+}
+
+@media screen and (min-height: 768px) {
+  .header {
+    font-size: 5vw;
+  }
+
+  .avatar {
+    width: 120px;
+    height: 120px;
+  }
+
+  .name_cont {
+    width: 60%;
+  }
+
+  input {
+    font-size: 3vw;
+    height: 45px;
+  }
+
+  .name_cont div {
+    font-size: 3.5vw;
+  }
+}
+
+@media screen and (min-height: 850px) {
+  .avatar {
+    width: 150px;
+    height: 150px;
+  }
+}
