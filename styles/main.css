@@ -41,6 +41,7 @@ body {
   max-height: 115px;
 
   font-size: 3vw;
+  white-space: nowrap;
 
   background-color: #232323;
   border: solid 10px #eeda00;

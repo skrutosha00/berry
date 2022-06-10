@@ -62,18 +62,17 @@ function getEnemy() {
     enemy.style.top = '35%'
 
     let enemyHealth = level + 2
+    let distance = 0
 
     let enemyInterval = setInterval(() => {
-        if (enemy.getBoundingClientRect().left <= 0) {
-            enemy.style.transform = 'translate(' + (randInt(screen.width * 0.125, screen.width * 0.25)) + 'px, ' + randInt(-screen.height * 0.2, screen.height * 0.2) + 'px)'
-        } else {
-            enemy.style.transform = 'translate(' + (enemy.getBoundingClientRect().left + enemy.offsetWidth + randInt(screen.width * 0.125, screen.width * 0.25)) + 'px, ' + randInt(-screen.height * 0.2, screen.height * 0.2) + 'px)'
-        }
-
-        if (enemy.getBoundingClientRect().left > screen.width) {
+        if (distance > window.innerWidth) {
             enemy.remove()
             clearInterval(enemyInterval)
         }
+
+        let stepLength = randInt(window.innerWidth * 0.125, window.innerWidth * 0.25)
+        enemy.style.transform = 'translate(' + (distance + enemy.offsetWidth + stepLength) + 'px, ' + randInt(-window.innerHeight * 0.2, window.innerHeight * 0.2) + 'px)'
+        distance += stepLength
     }, 1000)
 
     enemy.onclick = () => {
@@ -103,7 +102,7 @@ function play() {
     let timeLeft = 60
 
     let gameInterval = setInterval(() => {
-        timeLeft -= 1
+        timeLeft -= 10
         document.querySelector('.time').innerHTML = timeLeft
 
         if (!timeLeft) {

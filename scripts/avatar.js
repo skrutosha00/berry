@@ -4,6 +4,14 @@ if (!localStorage.getItem('balance_berry')) {
     localStorage.setItem('balance_berry', 5000)
 }
 
+if (!localStorage.getItem('hammer_berry')) {
+    localStorage.setItem('hammer_berry', 1)
+}
+
+if (!localStorage.getItem('chosen_berry')) {
+    localStorage.setItem('chosen_berry', 'hammer')
+}
+
 for (let i = 0; i < 6; i++) {
     let avatarCont = document.createElement('div')
     avatarCont.classList.add('avatar', 'block')
