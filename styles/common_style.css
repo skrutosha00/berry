@@ -95,3 +95,18 @@ a {
 .balance {
   transition: color 0.5s ease;
 }
+
+.volume_cont {
+  position: absolute;
+
+  width: 50px;
+  height: 50px;
+
+  border-radius: 50%;
+  background-color: #eeda00;
+}
+
+.volume {
+  max-height: 90%;
+  max-width: 90%;
+}

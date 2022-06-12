@@ -17,6 +17,10 @@ let playing = true
 let score = 0
 let level = Number(localStorage.getItem('level_berry'))
 
+let volume = false
+let audio = new Audio()
+audio.src = '../audio/game.mp3'
+
 for (let avatar of document.querySelectorAll('.avatar')) {
     avatar.querySelector('.avatar_name').innerHTML = localStorage.getItem('name_berry') ?? 'Player'
 
@@ -43,6 +47,17 @@ document.querySelector('.again').onclick = () => {
     document.querySelector('.time').innerHTML = 60
 
     play()
+}
+
+document.querySelector('.volume_cont').onclick = () => {
+    volume = !volume
+
+    if (volume) {
+        audio.play()
+    } else {
+        audio.pause()
+    }
+
 }
 
 function getEnemy() {
@@ -77,6 +92,10 @@ function getEnemy() {
 
     enemy.onclick = () => {
         if (!playing) { return }
+
+        let harmSound = new Audio()
+        harmSound.src = '../audio/harm.mp3'
+        harmSound.play()
 
         harm.classList.remove('hidden')
 

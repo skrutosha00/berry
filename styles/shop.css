@@ -80,6 +80,11 @@ body {
   border: solid 4px #eeda00;
 }
 
+.volume_cont {
+  left: 25%;
+  bottom: 0;
+}
+
 @media screen and (min-height: 400px) {
   .avatar {
     width: 180px;

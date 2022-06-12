@@ -41,3 +41,9 @@ input.value = localStorage.getItem('name_berry') ?? ''
 input.onblur = () => {
     localStorage.setItem('name_berry', input.value)
 }
+
+document.querySelector('.volume_cont').onclick = () => {
+    let audio = new Audio()
+    audio.src = '../audio/main.mp3'
+    audio.play()
+}

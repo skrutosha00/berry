@@ -27,3 +27,9 @@ document.querySelector('.avatar').appendChild(avatarPic)
 document.querySelector('.avatar_name').innerHTML = localStorage.getItem('name_berry') ?? 'Player'
 
 setBalanceField()
+
+document.querySelector('.volume_cont').onclick = () => {
+    let audio = new Audio()
+    audio.src = '../audio/main.mp3'
+    audio.play()
+}

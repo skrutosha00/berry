@@ -75,6 +75,11 @@ input {
   border: solid 8px #eeda00;
 }
 
+.volume_cont {
+  right: 3%;
+  bottom: 3%;
+}
+
 @media screen and (max-width: 780px) {
   .avatar {
     width: 75px;

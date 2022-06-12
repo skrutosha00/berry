@@ -61,6 +61,12 @@ let avatarPic = document.createElement('img')
 avatarPic.src = '../png/avatar_' + (localStorage.getItem('avatar_berry') ?? 1) + '.png'
 document.querySelector('.avatar').appendChild(avatarPic)
 
+document.querySelector('.volume_cont').onclick = () => {
+    let audio = new Audio()
+    audio.src = '../audio/main.mp3'
+    audio.play()
+}
+
 function chooseItem(button) {
     for (let item of document.querySelectorAll('.pic')) {
         item.classList.remove('chosen')
