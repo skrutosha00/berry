@@ -18,6 +18,9 @@ let playing = true
 let score = 0
 let level = Number(localStorage.getItem('level_berry'))
 
+let width = window.innerWidth
+let height = window.innerHeight
+
 let volume = false
 let audio = new Audio()
 audio.src = '../audio/game.mp3'
@@ -37,6 +40,18 @@ document.querySelector('.cf').innerHTML = cfData[localStorage.getItem('chosen_be
 let chosenPic = document.createElement('img')
 chosenPic.src = '../png/' + localStorage.getItem('chosen_berry') + '.png'
 document.querySelector('.chosen').appendChild(chosenPic)
+
+
+let originalEnemy = document.createElement('div')
+originalEnemy.classList.add('enemy', 'block')
+
+let enemyPic = document.createElement('img')
+enemyPic.src = '../png/enemy_' + randInt(1, 5) + '.png'
+
+let harm = document.createElement('div')
+harm.classList.add('harm', 'block', 'hidden')
+
+originalEnemy.append(enemyPic, harm)
 
 play()
 
@@ -63,16 +78,10 @@ volumeCont.onclick = () => {
 }
 
 function getEnemy() {
-    let enemy = document.createElement('div')
-    enemy.classList.add('enemy', 'block')
+    let enemy = originalEnemy.cloneNode(true)
+    let harm = enemy.querySelector('.harm')
+    enemy.querySelector('img').src = '../png/enemy_' + randInt(1, 5) + '.png'
 
-    let enemyPic = document.createElement('img')
-    enemyPic.src = '../png/enemy_' + randInt(1, 5) + '.png'
-
-    let harm = document.createElement('div')
-    harm.classList.add('harm', 'block', 'hidden')
-
-    enemy.append(enemyPic, harm)
     wrapper.append(enemy)
 
     enemy.style.left = -enemy.offsetWidth + 'px'
@@ -87,8 +96,8 @@ function getEnemy() {
             clearInterval(enemyInterval)
         }
 
-        let stepLength = randInt(window.innerWidth * 0.125, window.innerWidth * 0.25)
-        enemy.style.transform = 'translate(' + (distance + enemy.offsetWidth + stepLength) + 'px, ' + randInt(-window.innerHeight * 0.2, window.innerHeight * 0.2) + 'px)'
+        let stepLength = randInt(width * 0.125, width * 0.25)
+        enemy.style.transform = 'translate(' + (distance + enemy.offsetWidth + stepLength) + 'px, ' + randInt(-height * 0.2, height * 0.2) + 'px)'
         distance += stepLength
     }, 1000)
 
