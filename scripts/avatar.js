@@ -3,6 +3,7 @@ let input = document.querySelector('input')
 let volume = false
 let audio = new Audio()
 audio.src = '../audio/main.mp3'
+audio.loop = true
 
 if (!localStorage.getItem('balance_berry')) {
     localStorage.setItem('balance_berry', 5000)

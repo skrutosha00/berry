@@ -5,6 +5,7 @@ setBalanceField()
 let volume = false
 let audio = new Audio()
 audio.src = '../audio/main.mp3'
+audio.loop = true
 
 let balance = document.querySelector('.balance')
 let shop = document.querySelector('.shop')

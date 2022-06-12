@@ -24,6 +24,7 @@ let height = window.innerHeight
 let volume = false
 let audio = new Audio()
 audio.src = '../audio/game.mp3'
+audio.loop = true
 
 for (let avatar of document.querySelectorAll('.avatar')) {
     avatar.querySelector('.avatar_name').innerHTML = localStorage.getItem('name_berry') ?? 'Player'

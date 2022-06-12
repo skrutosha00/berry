@@ -5,6 +5,7 @@ let volumeCont = document.querySelector('.volume_cont')
 let volume = false
 let audio = new Audio()
 audio.src = '../audio/main.mp3'
+audio.loop = true
 
 for (let i = 0; i < 3; i++) {
     let level = document.createElement('a')
