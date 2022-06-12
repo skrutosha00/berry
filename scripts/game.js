@@ -104,12 +104,6 @@ function getEnemy() {
     enemy.onclick = () => {
         if (!playing) { return }
 
-        if (volume) {
-            let harmSound = new Audio()
-            harmSound.src = '../audio/harm.mp3'
-            harmSound.play()
-        }
-
         harm.classList.remove('hidden')
 
         setTimeout(() => {
