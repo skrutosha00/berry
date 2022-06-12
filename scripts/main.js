@@ -1,5 +1,11 @@
 import { setBalanceField } from './functions.js'
 
+let volumeCont = document.querySelector('.volume_cont')
+
+let volume = false
+let audio = new Audio()
+audio.src = '../audio/main.mp3'
+
 for (let i = 0; i < 3; i++) {
     let level = document.createElement('a')
     level.href = './game.html'
@@ -28,8 +34,14 @@ document.querySelector('.avatar_name').innerHTML = localStorage.getItem('name_be
 
 setBalanceField()
 
-document.querySelector('.volume_cont').onclick = () => {
-    let audio = new Audio()
-    audio.src = '../audio/main.mp3'
-    audio.play()
+volumeCont.onclick = () => {
+    volume = !volume
+
+    if (volume) {
+        audio.play()
+        volumeCont.querySelector('img').src = '../png/volume_off.png'
+    } else {
+        audio.pause()
+        volumeCont.querySelector('img').src = '../png/volume_on.png'
+    }
 }

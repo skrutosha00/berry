@@ -1,5 +1,9 @@
 let input = document.querySelector('input')
 
+let volume = false
+let audio = new Audio()
+audio.src = '../audio/main.mp3'
+
 if (!localStorage.getItem('balance_berry')) {
     localStorage.setItem('balance_berry', 5000)
 }
@@ -11,6 +15,8 @@ if (!localStorage.getItem('hammer_berry')) {
 if (!localStorage.getItem('chosen_berry')) {
     localStorage.setItem('chosen_berry', 'hammer')
 }
+
+let volumeCont = document.querySelector('.volume_cont')
 
 for (let i = 0; i < 6; i++) {
     let avatarCont = document.createElement('div')
@@ -42,8 +48,14 @@ input.onblur = () => {
     localStorage.setItem('name_berry', input.value)
 }
 
-document.querySelector('.volume_cont').onclick = () => {
-    let audio = new Audio()
-    audio.src = '../audio/main.mp3'
-    audio.play()
+volumeCont.onclick = () => {
+    volume = !volume
+
+    if (volume) {
+        audio.play()
+        volumeCont.querySelector('img').src = '../png/volume_off.png'
+    } else {
+        audio.pause()
+        volumeCont.querySelector('img').src = '../png/volume_on.png'
+    }
 }

@@ -4,6 +4,7 @@ setBalanceField()
 let balance = document.querySelector('.balance')
 let wrapper = document.querySelector('.wrapper')
 let warning = document.querySelector('.warning')
+let volumeCont = document.querySelector('.volume_cont')
 
 let cfData = {
     hammer: 1,
@@ -49,15 +50,16 @@ document.querySelector('.again').onclick = () => {
     play()
 }
 
-document.querySelector('.volume_cont').onclick = () => {
+volumeCont.onclick = () => {
     volume = !volume
 
     if (volume) {
         audio.play()
+        volumeCont.querySelector('img').src = '../png/volume_off.png'
     } else {
         audio.pause()
+        volumeCont.querySelector('img').src = '../png/volume_on.png'
     }
-
 }
 
 function getEnemy() {
@@ -93,9 +95,11 @@ function getEnemy() {
     enemy.onclick = () => {
         if (!playing) { return }
 
-        let harmSound = new Audio()
-        harmSound.src = '../audio/harm.mp3'
-        harmSound.play()
+        if (volume) {
+            let harmSound = new Audio()
+            harmSound.src = '../audio/harm.mp3'
+            harmSound.play()
+        }
 
         harm.classList.remove('hidden')
 

@@ -1,8 +1,14 @@
 import { setBalanceField, changeBalance, animateOnce } from './functions.js'
 
 setBalanceField()
+
+let volume = false
+let audio = new Audio()
+audio.src = '../audio/main.mp3'
+
 let balance = document.querySelector('.balance')
 let shop = document.querySelector('.shop')
+let volumeCont = document.querySelector('.volume_cont')
 
 let items = [
     { name: "hammer", price: 0, cf: 1 },
@@ -61,10 +67,16 @@ let avatarPic = document.createElement('img')
 avatarPic.src = '../png/avatar_' + (localStorage.getItem('avatar_berry') ?? 1) + '.png'
 document.querySelector('.avatar').appendChild(avatarPic)
 
-document.querySelector('.volume_cont').onclick = () => {
-    let audio = new Audio()
-    audio.src = '../audio/main.mp3'
-    audio.play()
+volumeCont.onclick = () => {
+    volume = !volume
+
+    if (volume) {
+        audio.play()
+        volumeCont.querySelector('img').src = '../png/volume_off.png'
+    } else {
+        audio.pause()
+        volumeCont.querySelector('img').src = '../png/volume_on.png'
+    }
 }
 
 function chooseItem(button) {
